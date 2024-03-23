@@ -1,15 +1,20 @@
 ## Driver file
 
+import pygame
 from Display import Screen
 
-display = Screen.StartDisplay()
+pygame.init()
+
+screen = Screen.StartDisplay(pygame)
 
 # Main Runtime loop
 running = True
-while running:
+while running :
+    Screen.DisplayUi(pygame, screen)
+
     # Check events code
-    for event in display.event.get():
-        if event.type == display.QUIT:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
             running = False
 
-    display.display.update()
+    pygame.display.update()
