@@ -1,6 +1,7 @@
 import moviepy.editor as mpe
 import os
 import random
+import math
 
 def createVideo(url: str) -> str:
     # Replace the next string with the output string from get audio
@@ -16,7 +17,8 @@ def createVideo(url: str) -> str:
     # Get video
     audio_duration = audio_background.duration
     videos = []
-    for i in range(0,4):
+    videos_needed = math.ceil(audio_duration/180)
+    for i in range(0,videos_needed):
         videos.append(mpe.VideoFileClip(f'template_videos/minecraft_parkour_{i}.mp4'))
     v_clip = mpe.concatenate_videoclips(videos)
     video_start = random.randint(0, ((int)(v_clip.duration - audio_duration)) + 1)
