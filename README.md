@@ -13,6 +13,8 @@ Well good news, we're ahead of the game. Welcome to BlokTok, where we bring your
 
 ### Our project provides A NEW PERSPECTIVE on consuming Reddit content by transforming it into engaging TikTok videos set against the backdrop of Minecraft, offering a refreshing and entertaining way to experience online discussions.
 
+🟧🟧🟧🟧🟧🟧🟧🟧🟧🟧
+
 ## Table of Contents
 
 1. [Installation](#installation)
