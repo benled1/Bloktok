@@ -9,7 +9,10 @@ audio_background = audio_background.subclip(0,180)
 audio_duration = audio_background.duration
 # Subclip a random part of it 
 # Get video
-v_clip = mpe.VideoFileClip('../template_videos/minecraft_parkour.mp4')
+videos = []
+for i in range(0,4):
+    videos.append(mpe.VideoFileClip(f'../template_videos/minecraft_parkour_{i}.mp4'))
+v_clip = mpe.concatenate_videoclips(videos)
 video_start = random.randint(0, ((int)(v_clip.duration - audio_duration)) + 1)
 video_end = video_start + audio_duration + 1
 v_clip = v_clip.subclip(video_start, video_end)
