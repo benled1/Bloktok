@@ -2,6 +2,18 @@ import tkinter as tk
 import vlc
 from PIL import Image, ImageTk
 
+# Colours
+red = "#FF4500"
+lightRed = "#f08760"
+black = "#000000"
+blue = "#CEE3F8"
+white = "#FFFFFF"
+
+# Padding intervals
+bigPadding = 64
+medPadding = 32
+smallPadding = 16
+
 class StateApp(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -17,17 +29,17 @@ class StateApp(tk.Tk):
         self.titleImage = self.titleImage.resize((500, 100))
         self.tkTitleImage = ImageTk.PhotoImage(self.titleImage)
 
-        self.titleLabel = tk.Label(self, image=self.tkTitleImage, bg="white")
-        self.titleLabel.pack()
-
-        self.descriptionLabel = tk.Label(self, text="Enter a Reddit URL")
-        self.descriptionLabel.pack(pady=10)
-
-        self.urlInput = tk.Text(self)
-        self.urlInput.pack(pady=10)
-
+        self.titleLabel = tk.Label(self, image=self.tkTitleImage, bg=white)
+        self.titleLabel.pack(pady=smallPadding, side="top")
+        
         self.toggle_button = tk.Button(self, text="Generate Brainrot Video", command=self.PlayVideo)
-        self.toggle_button.pack()
+        self.toggle_button.pack(pady=smallPadding, side="bottom")
+
+        self.descriptionLabel = tk.Label(self, text="Enter a Reddit URL", bg=white, fg=red)
+        self.descriptionLabel.pack(pady=bigPadding, side="bottom")
+
+        self.urlInput = tk.Text(self, bg=lightRed)
+        self.urlInput.pack(pady=bigPadding, side="bottom")
 
     def PlayVideo(self):
         # Get url
