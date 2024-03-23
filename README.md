@@ -7,11 +7,11 @@ Do you ever find yourself sucked into a wormhole of TikTok brainrot? It's easy t
 - I REFUSED to be ADOPTED 🤰
 - My Roommate OWED me Money and I had to use EXTREME MEASURES to get it from him 💸
 - I Gave my WIFE an ULTIMATUM 💍
-
-### Our project provides A NEW PERSPECTIVE on consuming Reddit content by transforming it into engaging TikTok videos set against the backdrop of Minecraft, offering a refreshing and entertaining way to experience online discussions.
   
 You get the picture. Now imagine an application that could generate these videos from the single link to a Reddit post...
 Well good news, we're ahead of the game. Welcome to BlokTok, where we bring your Reddit brainrot to life!
+
+### Our project provides A NEW PERSPECTIVE on consuming Reddit content by transforming it into engaging TikTok videos set against the backdrop of Minecraft, offering a refreshing and entertaining way to experience online discussions.
 
 ## Table of Contents
 
