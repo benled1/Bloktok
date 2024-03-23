@@ -6,6 +6,9 @@ import re
 
 load_dotenv()
 access_token = os.getenv("REDDIT_TOKEN")
+reddit_slang = {
+    "AITA": "am I the asshole"
+}
 
 def get_post_id(url:str) -> str:
     pattern = r'/comments/(\w+)/'
@@ -29,10 +32,14 @@ def request_data(url: str) -> Dict:
 
 
 def get_post_title(reddit_data: Dict) -> str:
-    return reddit_data["title"]
+    for slang in reddit_slang:
+        clean_text = reddit_data["title"].replace(slang, reddit_slang[slang])
+    return clean_text
 
 def get_post_body(reddit_data: Dict) -> str:
-    return reddit_data["selftext"]
+    for slang in reddit_slang:
+        clean_text = reddit_data["selftext"].replace(slang, reddit_slang[slang])
+    return clean_text
 
 
 
