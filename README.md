@@ -9,7 +9,7 @@ Do you ever find yourself sucked into a wormhole of TikTok brainrot? It's easy t
 - I Gave my WIFE an ULTIMATUM 💍
   
 You get the picture. Now imagine an application that could generate these videos from the single link to a Reddit post...
-Well good news, We're ahead of the game. Welcome to BlokTok, where we bring your Reddit brainrot to life!
+Well good news, we're ahead of the game. Welcome to BlokTok, where we bring your Reddit brainrot to life!
 
 ## Table of Contents
 
