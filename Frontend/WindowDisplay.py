@@ -80,7 +80,7 @@ class StateApp(tk.Tk):
         # Send url to backend for processing
 
         # Get returned video
-        videoPath = "Frontend/Graphics/testClip.mp4"
+        videoPath = ""
 
         # Reset the screen
         self.urlInput.destroy()
