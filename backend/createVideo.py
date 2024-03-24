@@ -28,7 +28,7 @@ def createVideo(url: str) -> str:
     videos_created = len(os.listdir('output_video/'))
     #Create subtitles
     subtitle_file = transcribeAudio(audio_path, videos_created)
-    generator = lambda txt: mpe.TextClip(txt, font="arial", fontsize=50, color="white",  size=v_clip.size)
+    generator = lambda txt: mpe.TextClip(txt, font="gill sans", fontsize=50, color="white", stroke_color="black", stroke_width="1",  size=v_clip.size)
     subtitles = SubtitlesClip(subtitle_file, generator)
     # Create a new video with the name
     file_output_path = f"output_video/newVideo{videos_created}.mp4"
@@ -39,21 +39,26 @@ def createVideo(url: str) -> str:
 
 def transcribeAudio(audioFilePath: str, videoNum: int):
     model = WhisperModel("small")
-    segments, info = model.transcribe(audioFilePath)
+    segments, info = model.transcribe(audioFilePath, word_timestamps=True)
     language = info[0]
     segments = list(segments)
+    print(segments)
     # Delete old file if it exists
     if os.path.exists(f"output_video/sub-subtitle.{language}.srt"):
         os.remove(f"output_video/sub-subtitle.{language}.srt")
     subtitle_file = f"output_video/sub-subtitle.{language}.srt"
     text = ""
-    for index, segment in enumerate(segments):
-        segment_start = format_time(segment.start)
-        segment_end = format_time(segment.end)
-        text += f"{str(index+1)} \n"
-        text += f"{segment_start} --> {segment_end} \n"
-        text += f"{segment.text} \n"
-        text += "\n"
+    index = 0
+    for segment in segments:
+        for word in segment.words:
+            word_start = format_time(word.start)
+            word_end = format_time(word.end)
+            text += f"{str(index+1)} \n"
+            text += f"{word_start} --> {word_end} \n"
+            new_word = word.word.replace(" ", "")
+            text += f"{new_word} \n"
+            text += "\n"
+            index += 1
         
     f = open(subtitle_file, "w")
     f.write(text)
