@@ -1,6 +1,7 @@
 import tkinter as tk
 import vlc
 from PIL import Image, ImageTk
+from backend.createVideo import createVideo
 
 # Colours
 red = "#FF4500"
@@ -78,9 +79,7 @@ class StateApp(tk.Tk):
         print(url)
 
         # Send url to backend for processing
-
-        # Get returned video
-        videoPath = ""
+        videoPath = createVideo(url)
 
         # Reset the screen
         self.urlInput.destroy()
