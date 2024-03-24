@@ -18,8 +18,7 @@ def createVideo(url: str) -> str:
     # Get video
     audio_duration = audio_background.duration
     videos = []
-    videos_needed = math.ceil(audio_duration/180)
-    for i in range(0,videos_needed):
+    for i in range(0,4):
         videos.append(mpe.VideoFileClip(f'template_videos/minecraft_parkour_{i}.mp4'))
     v_clip = mpe.concatenate_videoclips(videos)
     video_start = random.randint(0, ((int)(v_clip.duration - audio_duration)) + 1)
