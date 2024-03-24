@@ -9,10 +9,13 @@ black = "#000000"
 blue = "#CEE3F8"
 white = "#FFFFFF"
 
+# Font
+gillLarge = ("Gill Sans", 18)
+gillMed = ("Gill Sans", 12)
+
 # Padding intervals
-bigPadding = 64
-medPadding = 32
-smallPadding = 16
+bigPadding = 100
+smallPadding = 8
 
 class StateApp(tk.Tk):
     def __init__(self):
@@ -29,17 +32,45 @@ class StateApp(tk.Tk):
         self.titleImage = self.titleImage.resize((500, 100))
         self.tkTitleImage = ImageTk.PhotoImage(self.titleImage)
 
-        self.titleLabel = tk.Label(self, image=self.tkTitleImage, bg=white)
-        self.titleLabel.pack(pady=smallPadding, side="top")
+        self.titleLabel = tk.Label(self, 
+                                   image=self.tkTitleImage, 
+                                   bg=white)
+        self.titleLabel.grid(row=1, 
+                             column=0, 
+                             padx=smallPadding, 
+                             pady=bigPadding)
+
+        self.urlInput = tk.Text(self, 
+                                height=1, 
+                                width=50, 
+                                bg=lightRed, 
+                                font=gillMed)
+        self.urlInput.grid(row=2, 
+                           column=0, 
+                           padx=smallPadding, 
+                           pady=smallPadding)
         
-        self.toggle_button = tk.Button(self, text="Generate Brainrot Video", command=self.PlayVideo)
-        self.toggle_button.pack(pady=smallPadding, side="bottom")
+        self.descriptionLabel = tk.Label(self, 
+                                         text="ENTER A REDDIT URL", 
+                                         bg=white, 
+                                         fg=red, 
+                                         font=gillMed)
+        self.descriptionLabel.grid(row=3, 
+                                   column=0, 
+                                   padx=smallPadding, 
+                                   pady=smallPadding)
 
-        self.descriptionLabel = tk.Label(self, text="Enter a Reddit URL", bg=white, fg=red)
-        self.descriptionLabel.pack(pady=bigPadding, side="bottom")
-
-        self.urlInput = tk.Text(self, bg=lightRed)
-        self.urlInput.pack(pady=bigPadding, side="bottom")
+        self.toggleButton = tk.Button(self, 
+                                      text="GENERATE BRAINROT", 
+                                      command=self.PlayVideo, 
+                                      bg=black, 
+                                      fg=white, 
+                                      borderwidth=0, 
+                                      font=gillLarge)
+        self.toggleButton.grid(row=4, 
+                               column=0, 
+                               padx=smallPadding, 
+                               pady=bigPadding)
 
     def PlayVideo(self):
         # Get url
@@ -55,7 +86,7 @@ class StateApp(tk.Tk):
         self.urlInput.destroy()
         self.titleLabel.destroy()
         self.descriptionLabel.destroy()
-        self.toggle_button.destroy()
+        self.toggleButton.destroy()
         self.state = not self.state
 
         # add the video player
