@@ -40,4 +40,4 @@ Installation is quite hefty. We recommend Windows only since that's where it has
 
 ## Demo
 
-xxx
+[Demo Video](https://drive.google.com/file/d/1O-b5g4WuxHsJXVXd77f2djr2gyXhHBqB/view?usp=sharing)
