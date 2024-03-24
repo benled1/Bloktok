@@ -2,6 +2,7 @@ import moviepy.editor as mpe
 import os
 import random
 import math
+from .text_parsing import client
 
 def createVideo(url: str) -> str:
     # Replace the next string with the output string from get audio
@@ -10,8 +11,8 @@ def createVideo(url: str) -> str:
     # Call getAudio
     
     # Delete next 2 lines once getAudio is implemented
-    audio_background = mpe.AudioFileClip('template_videos/reddit_audio.mp3')
-    audio_background = audio_background.subclip(0,180)
+    audio_path = client.get_audio(url)["audio_filepath"]
+    audio_background = mpe.AudioFileClip(audio_path)
  
     # Subclip a random part of it 
     # Get video
