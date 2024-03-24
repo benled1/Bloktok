@@ -30,7 +30,7 @@ xxx
 1. Begin by searching far and wide for your favourite Reddit story - the more clickbait, the better.
 2. Copy the link to the post and paste it into BlokTok.
 3. Sit back, relax, enjoy a 2 minute coffee break, go outside and touch some grass while you're at it, and before you know it your minecraft video is ready!
-4. Distribute your video to your heart's content, rotting the brains of all iPad children of the world.
+4. Distribute your video to your heart's content, rotting the brains of all iPad children across the world.
 
 ## Demo
 
