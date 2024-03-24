@@ -24,7 +24,13 @@ Well good news, we're ahead of the game. Welcome to BlokTok, where we bring your
    
 ## Installation
 
-xxx
+Installation is quite hefty. We recommend Windows only since that's where it has been tested. On top of that, here are the following prerequisites.
+
+1. Install vlc for your OS. https://www.videolan.org/vlc/download-windows.html
+2. Install Image Magick. https://imagemagick.org/script/download.php
+3. Pip install the Python requirements. `pip install -r requirements.txt`
+4. Create a `.env` file following the .env_template file in the `Frontend/backend/` dir. This file should contain your own API keys for open AI and Reddit bearer token.
+  - grab these keys by following the videos: [Reddit](https://www.youtube.com/watch?v=x9boO9x3TDA) and [OpenAI](https://www.youtube.com/watch?v=y8-En6J9o-Y)
 
 ## Instructions
 1. Begin by searching far and wide for your favourite Reddit story - the more clickbait, the better.
