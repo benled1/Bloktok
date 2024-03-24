@@ -28,7 +28,7 @@ def createVideo(url: str) -> str:
     videos_created = len(os.listdir('output_video/'))
     #Create subtitles
     subtitle_file = transcribeAudio(audio_path, videos_created)
-    generator = lambda txt: mpe.TextClip(txt, font="gill sans", fontsize=50, color="white", stroke_color="black", stroke_width="1",  size=v_clip.size)
+    generator = lambda txt: mpe.TextClip(txt, font='Impact', fontsize=50, color="white", stroke_color="black", stroke_width=2,  size=v_clip.size)
     subtitles = SubtitlesClip(subtitle_file, generator)
     # Create a new video with the name
     file_output_path = f"output_video/newVideo{videos_created}.mp4"
@@ -42,7 +42,6 @@ def transcribeAudio(audioFilePath: str, videoNum: int):
     segments, info = model.transcribe(audioFilePath, word_timestamps=True)
     language = info[0]
     segments = list(segments)
-    print(segments)
     # Delete old file if it exists
     if os.path.exists(f"output_video/sub-subtitle.{language}.srt"):
         os.remove(f"output_video/sub-subtitle.{language}.srt")
